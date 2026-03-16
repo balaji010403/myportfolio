@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
             if (!href) return;
-            
+
             const hashIndex = href.indexOf('#');
             if (hashIndex !== -1) {
                 const targetId = href.substring(hashIndex);
@@ -29,4 +29,21 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // 3. Handle Contact Form Submission
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Collect form data (if you want to process it later)
+            // const formData = new FormData(this);
+
+            // Show a simple success mechanism
+            alert('Thank you for your message! I will get back to you soon.');
+
+            // Reset the form
+            this.reset();
+        });
+    }
 });
